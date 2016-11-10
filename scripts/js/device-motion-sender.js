@@ -21,15 +21,6 @@
  * This is a workaround for https://bugs.webkit.org/show_bug.cgi?id=150072.
  */
 function DeviceMotionSender() {
-  // This is an iOS-specific workaround.
-  if (!this.isIOS_()) {
-    return;
-  }
-
-  window.addEventListener('devicemotion', this.onDeviceMotion_.bind(this), false);
-
-  // Find the right iFrame to send data to.
-  this.iframes = document.querySelectorAll('iframe.vrview');
 }
 
 DeviceMotionSender.prototype.onDeviceMotion_ = function(e) {
@@ -70,7 +61,7 @@ DeviceMotionSender.prototype.cloneDeviceMotionEvent_ = function(e) {
 };
 
 DeviceMotionSender.prototype.isIOS_ = function() {
-  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  return false;
 };
 
 // From http://stackoverflow.com/questions/12381334/foolproof-way-to-detect-if-iframe-is-cross-domain.
