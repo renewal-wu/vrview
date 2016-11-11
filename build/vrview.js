@@ -8095,7 +8095,7 @@
             function onQuaternionChange() {
 
                 rotation.setFromQuaternion(quaternion, undefined, false);
-                window.external.notify("quaternion:" + quaternion.y);
+                window.external.notify("quaternion:" + quaternion.w);
             }
 
             rotation.onChange(onRotationChange);
