@@ -44309,9 +44309,14 @@
         {
             videoElement.Volume = targetVolume;
         }
-
-        function setVideoIsMute(isMute)
+        
+        function setVideoMute()
         {
-            videoElement.muted = isMute;
+            videoElement.muted = true;
+        }
+
+        function setVideoUnmute()
+        {
+            videoElement.muted = false;
         }
 
