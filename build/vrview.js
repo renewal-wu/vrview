@@ -8095,7 +8095,7 @@
             function onQuaternionChange() {
 
                 rotation.setFromQuaternion(quaternion, undefined, false);
-                window.external.notify("quaternion:" + quaternion.w);
+                window.external.notify("quaternion:" + quaternion.w + ";" + quaternion.x + ";" + quaternion.y + ";" + quaternion.z);
             }
 
             rotation.onChange(onRotationChange);
@@ -44086,27 +44086,22 @@
     }, {}]
 }, {}, [19]);
 
-        var videoElement = null;
+var videoElement = null;
 
-        function setVideoVolume(targetVolume)
-        {
-            videoElement.volume = parseFloat(targetVolume);
-        }
-        
-        function setVideoMute()
-        {
-            videoElement.muted = true;
-        }
+function setVideoVolume(targetVolume) {
+    videoElement.volume = parseFloat(targetVolume);
+}
 
-        function setVideoUnmute()
-        {
-            videoElement.muted = false;
-        }
+function setVideoMute() {
+    videoElement.muted = true;
+}
 
-        var webVR;
+function setVideoUnmute() {
+    videoElement.muted = false;
+}
 
-        function resetWebVRSensor()
-        {
-            webVR.resetSensor();
-        }
-        
+var webVR;
+
+function resetWebVRSensor() {
+    webVR.resetSensor();
+}
