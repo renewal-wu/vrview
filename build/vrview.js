@@ -8095,7 +8095,7 @@
             function onQuaternionChange() {
 
                 rotation.setFromQuaternion(quaternion, undefined, false);
-
+                window.external.notify("quaternion:" + quaternion.y);
             }
 
             rotation.onChange(onRotationChange);
@@ -39954,7 +39954,7 @@
 
                 // Initialize a WebVRConfig just in case.
                 window.WebVRConfig = window.WebVRConfig || {};
-                new WebVRPolyfill();
+                webVR = new WebVRPolyfill();
 
             }, { "./webvr-polyfill.js": 12 }], 6: [function (_dereq_, module, exports) {
                 /*
@@ -42679,6 +42679,10 @@
                     }
                 }
 
+                WebVRPolyfill.prototype.resetSensor = function () {
+                    this.devices[1].touchPanner.resetSensor();
+                }
+
                 WebVRPolyfill.prototype.isWebVRAvailable = function () {
                     return ('getVRDevices' in navigator) || ('mozGetVRDevices' in navigator);
                 };
@@ -44099,3 +44103,10 @@
             videoElement.muted = false;
         }
 
+        var webVR;
+
+        function resetWebVRSensor()
+        {
+            webVR.resetSensor();
+        }
+        
