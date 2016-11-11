@@ -39871,14 +39871,7 @@
                 };
 
                 FusionPositionSensorVRDevice.prototype.resetSensor = function () {
-                    var euler = new THREE.Euler();
-                    euler.setFromQuaternion(this.filter.getOrientation());
-                    var yaw = euler.y;
-                    console.log('resetSensor with yaw: %f', yaw);
-                    this.resetQ.setFromAxisAngle(new THREE.Vector3(0, 0, 1), -yaw);
-                    if (!WebVRConfig.TOUCH_PANNER_DISABLED) {
-                        this.touchPanner.resetSensor();
-                    }
+                    this.touchPanner.resetSensor();
                 };
 
                 FusionPositionSensorVRDevice.prototype.onDeviceMotionChange_ = function (deviceMotion) {
