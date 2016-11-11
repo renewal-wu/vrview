@@ -44307,7 +44307,7 @@
 
         function setVideoVolume(targetVolume)
         {
-            videoElement.Volume = targetVolume;
+            videoElement.volume = targetVolume;
         }
         
         function setVideoMute()
