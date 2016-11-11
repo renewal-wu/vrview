@@ -40121,7 +40121,8 @@
                 };
 
                 MouseKeyboardPositionSensorVRDevice.prototype.resetSensor = function () {
-                    console.error('Not implemented yet.');
+                    this.phi = 0;
+                    this.theta = 0;
                 };
 
                 module.exports = MouseKeyboardPositionSensorVRDevice;
@@ -42680,7 +42681,7 @@
                 }
 
                 WebVRPolyfill.prototype.resetSensor = function () {
-                    this.devices[1].touchPanner.resetSensor();
+                    this.devices[this.devices.length - 1].resetSensor();
                 }
 
                 WebVRPolyfill.prototype.isWebVRAvailable = function () {
