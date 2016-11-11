@@ -43238,7 +43238,6 @@
         var renderer = new PhotosphereRenderer();
         renderer.on('error', onRenderError);
 
-        var videoElement = null;
         // TODO: Make this not global.
         // Currently global in order to allow callbacks.
         var loadedScene = null;
@@ -44303,3 +44302,16 @@
 
     }, {}]
 }, {}, [19]);
+
+        var videoElement = null;
+
+        function setVideoVolume(targetVolume)
+        {
+            videoElement.Volume = targetVolume;
+        }
+
+        function setVideoIsMute(isMute)
+        {
+            videoElement.muted = isMute;
+        }
+
